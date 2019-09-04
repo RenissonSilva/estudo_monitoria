@@ -35,13 +35,16 @@ include_once 'init.php';
     </table>
 
     <script type="text/javascript">
-        $('.delete td').on('click', function(evt) {
-            $.ajax({
-                url: "delete.php",
-                success: function() {
-                console.log(evt);
+        $('.delete td a').on('click', function(evt)
+        //Seleciona todo td filho da classe delete, e executa uma função ao ser clicado
+         {
                 evt.preventDefault();
-                $(this).parent().remove();
+                let url = $(evt.target).attr('href');
+            $.ajax({
+                //
+                url: url,
+                success: function() {
+                    $(evt.target).parent().parent().remove();
                 },
                 error: function(data) {
                     alert('deu ruim, moisés');

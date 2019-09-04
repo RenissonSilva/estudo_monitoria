@@ -10,6 +10,5 @@ $linhas[$linhaParaApagar] = "";
 
 file_put_contents('dados.csv', implode('', $linhas));
 
-header('location:index.php');
 
 ?>
