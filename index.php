@@ -7,6 +7,7 @@ include_once 'init.php';
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <?php
@@ -15,7 +16,7 @@ include_once 'init.php';
             $dados[$i] = explode(',', $dados[$i]);
         }
     ?>
-    <table>
+    <table class="striped">
         <tr>
             <th>Nome</th>
             <th>Nota</th>
@@ -23,7 +24,7 @@ include_once 'init.php';
         </tr>
 
         <?php foreach ($dados as $id => $dado): ?>
-            <tr>
+            <tr class="delete">
                 <td><?= $dado[0] ?></td>
                 <td><?= $dado[1] ?></td>
                 <td>
@@ -32,6 +33,23 @@ include_once 'init.php';
             </tr>
         <?php endforeach ?>
     </table>
+
+    <script type="text/javascript">
+        $('.delete td').on('click', function(evt) {
+            $.ajax({
+                url: "delete.php",
+                success: function() {
+                console.log(evt);
+                evt.preventDefault();
+                $(this).parent().remove();
+                },
+                error: function(data) {
+                    alert('deu ruim, moisés');
+                }
+            });
+            
+        });
+    </script>
 
     <?php if(logado()): ?>
         <form action="atualizar.php" method="POST">
