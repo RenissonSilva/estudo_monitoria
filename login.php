@@ -22,7 +22,7 @@ if (!empty($resul)) {
 
 	login($resul["USR_NAME"], $resul["USR_EMAIL"]);
 
-	redirect("tabela.php");
+	redirect("index.php");
 }
 
 

@@ -10,12 +10,12 @@ $pw2 = $_POST['pw2']?? "";
 
 
 if($pw != $pw2){
-	redirect("index.php");
+	redirect("reg-login.php");
 
 }
 
 if($name == "" || $email == ""){
-	redirect("index.php");
+	redirect("reg-login.php");
 
 }
 else{
@@ -26,9 +26,8 @@ else{
 		$smt -> bindParam(2,$email);
 		$smt -> bindParam(3, $pw);
 		$smt -> execute();
-		redirect("index.php");
-
-	var_dump("nao, nao, entrou foi aqui");
+		redirect("reg-login.php");
+		
 	} catch (Exception $e) {
 		$e -> getMessage();
 	}

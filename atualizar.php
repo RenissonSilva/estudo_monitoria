@@ -3,4 +3,4 @@
     $handle = fopen('dados.csv', 'a');
     fwrite($handle, $dado);
 ?>
-<?php header('location:tabela.php'); ?>
+<?php header('location:index.php'); ?>

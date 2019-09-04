@@ -5,7 +5,7 @@ include 'init.php';
 
 if(logado()){
 	logout();
-	redirect("index.php")
+	redirect("index.php");
 }
 
  ?>
