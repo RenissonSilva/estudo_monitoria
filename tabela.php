@@ -37,5 +37,9 @@
         <br>
         <input type="submit">
     </form>
+
+    <a href="cadastrar.php">Cadastrar</a>
+    <a href="login.php">Entrar</a>
+
 </body>
 </html>
